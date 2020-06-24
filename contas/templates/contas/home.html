@@ -7,5 +7,17 @@
 </head>
 <body>
     <h1>Seja bem vindo!</h1>
+
+    <p> Agora é: {{ now }}</p>
+
+    <lu>
+        {% for tra in trans %}
+            {% if tra == "t1" %}
+                <li><b> {{ tra }} </b></li>
+            {% else %}
+                <li> {{ tra }} </li>
+            {% endif %}
+        {% endfor %}
+    </lu>
 </body>
 </html>
