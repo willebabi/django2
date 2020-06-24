@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Listagem</title>
 </head>
 <body>
     <h1>Trasações: </h1>
 
     <lu>
         {% for tra in transacao %}
-            <li><b> {{ tra.descricao }} </b> - {{ tra.data }} - {{ tra.valor }} - {{ tra.categoria }}</li>
+            <li><a href="{% url 'update' tra.id %}">ID {{ tra.id }}</a> - <b> {{ tra.descricao }} </b> - {{ tra.data }} - {{ tra.valor }} - {{ tra.categoria }}</li>
         {% endfor %}
     </lu>
+    <button onclick="document.location.href = '{% url 'novo' %}';">Novo</button>
 </body>
 </html>

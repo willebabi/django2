@@ -17,9 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from contas.views import home
 from contas.views import listagem
+from contas.views import novatransacao
+from contas.views import update
+from contas.views import delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home),
-    path('', listagem),
+    path('form/', novatransacao, name='novo'),
+    path('update/<int:pk>/', update, name='update'),
+    path('delete/<int:pk>/', delete, name='delete'),
+    path('', listagem, name='listagem'),
 ]
